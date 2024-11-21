@@ -1,7 +1,6 @@
 from Chromosome import Chromosome
 from Knight import Knight
 import random
-import cProfile
 class Population:
     def __init__(self,population_size):
         self.population_size=population_size
@@ -31,7 +30,7 @@ class Population:
         parent2 = tournament_sample[1]
         
         return parent1, parent2
-    
+
     def create_new_generation(self):
         new_knights=[]
         while len(new_knights)<self.population_size:
@@ -50,15 +49,16 @@ def main():
     while True:
         population.check_population()
         maxFit, bestSolution = population.evaluate ()
-        # print("Final Path:", bestSolution.path)
-        # print("Fitness:", maxFit)
-        if maxFit == 63:
+        if maxFit ==64:
             print("Final Path:", bestSolution.path)
             print("Fitness:", maxFit)
+            print("number of generations:",population.generation)
+
             break
+   
         #Generate the new population
         population.create_new_generation ()
 if __name__ == "__main__":
-    cProfile.run('main()')
+    main()
 
         
