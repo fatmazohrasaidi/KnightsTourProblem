@@ -1,6 +1,7 @@
 from Chromosome import Chromosome
 from Knight import Knight
 import random
+import visualize
 class Population:
     def __init__(self,population_size):
         self.population_size=population_size
@@ -58,6 +59,10 @@ def main():
    
         #Generate the new population
         population.create_new_generation ()
+
+    chessboard_img = "chessboard.png"  # Path to your chessboard image (800x800 pixels)
+    knight_img = "knight.png" 
+    visualize.visualize_knights_tour(chessboard_img, knight_img, bestSolution.path, delay=0.5)
 if __name__ == "__main__":
     main()
 
