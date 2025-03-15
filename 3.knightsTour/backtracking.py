@@ -53,7 +53,7 @@ def backtracking(knight ,csp):
     for direction in select_mrv(knight):
       
         # Check if the move is consistent with the current path
-        if knight.consistent(direction):
+        if knight.consistent(direction, csp.constraints ):
             knight.add_move(direction)  # Make the move
             result = backtracking(knight,csp)  # Recur to make the next move
             if result:  # If a solution is found, return it

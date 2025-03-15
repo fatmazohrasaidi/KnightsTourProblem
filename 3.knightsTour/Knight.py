@@ -20,7 +20,7 @@ class Knight:
         dx, dy = moves[direction]
         return self.position[0] + dx, self.position[1] + dy
 
-    def consistent(self, direction):
+    def consistent(self, direction, constraints):
         """Checks if a move is consistent with the knight's current path"""
         new_position = self.move_forward(direction)
         # Check if the move is within bounds and not already visited
